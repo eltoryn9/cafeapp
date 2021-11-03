@@ -2,15 +2,21 @@ import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, TextInput, Button, View } from 'react-native';
 import { AppScreens, AuthStackParamList } from '../../../navigators/AuthFlowNavigatior';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 
-type LoginScreenNavigationProps = 
-StackNavigationProp<AuthStackParamList, AppScreens.Login>;
 
-interface LoginScreenProps {
-    navigation: LoginScreenNavigationProps;
+type SignInScreenNavigationProps = 
+StackNavigationProp<AuthStackParamList, AppScreens.SignIn>;
+
+interface SignInScreenProps{
+    navigation: SignInScreenNavigationProps;
 }
 
-const LoginScreen: React.FunctionComponen<LoginScreenProps> = (props) => {
+GoogleSignin.configure({
+    scopes: []
+});
+
+const SignInScreen: React.FC<SignInScreenProps> = (props) => {
     const { navigation } = props;
     const [ username, setUsername ] = useState<string>('');
 
@@ -30,7 +36,7 @@ const LoginScreen: React.FunctionComponen<LoginScreenProps> = (props) => {
             </View>
             <View style={styles.btnSignupContainer}>
                 <Text>Or</Text>
-                <Button title="Signup" onPress={() => navigation.navigate(AppScreens.Signup, {username})}/>
+                <Button title="Signup" onPress={() => navigation.navigate(AppScreens.SignUp, {username})}/>
             </View>
         </SafeAreaView>
     );
@@ -62,4 +68,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default LoginScreen;
+export default SignInScreen;

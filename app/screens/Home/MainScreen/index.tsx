@@ -4,11 +4,11 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 import {
     HomeScreens,
-    HomeStackParamList
-} from '../../navigators/HomeStackNavigator';
+    HomeTabParamList
+} from '../../../navigators/HomeTabNavigator';
 
 type MainScreenNavigationProps = StackNavigationProp<
-    HomeStackParamList,
+    HomeTabParamList,
     HomeScreens.Main
 >;
 
@@ -16,7 +16,7 @@ interface MainScreenProps{
     navigation: MainScreenNavigationProps;
 }
 
-const MainScreen: React.FunctionComponent<MainScreenProps> = (props) => {
+const MainScreen: React.FC<MainScreenProps> = (props) => {
     const {navigation} = props;
     const initialSymbol: string = "second";
     const [symbol, setSymbol] = useState<String>(initialSymbol);
@@ -25,12 +25,7 @@ const MainScreen: React.FunctionComponent<MainScreenProps> = (props) => {
             <View style={styles.welcomeContainer}>
                 <Text style={styles.welcome}>Main Screen</Text>
             </View>
-            <View style={styles.btnNextContainer}>
-                <Button 
-                    title="More"
-                    onPress={() => navigation.navigate(HomeScreens.Details, {symbol})}
-                />
-            </View>
+            
         </SafeAreaView>
     );
 };

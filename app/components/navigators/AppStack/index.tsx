@@ -1,7 +1,7 @@
 import React from 'react';
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MainScreen from '../../screens/Home/MainScreen';
-import ProfileScreen from '../../screens/Home/ProfileScreen';
+import MainScreen from '../../screens/App/MainScreen';
+import ProfileScreen from '../../screens/App/ProfileScreen';
 
 export enum HomeScreens {
     Main = 'Main',

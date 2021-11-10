@@ -1,5 +1,6 @@
 {
-    "googleWebClientId": "1069995328646-vcj3vk51946ofqtk14dj9qf4llrq6phr.apps.googleusercontent.com",
+    "api_server_url": "https://18ff-116-39-65-120.ngrok.io/hello/google",
+    "googleWebClientId": "844235026468-5gqhigsogpko3lhk6auts1oohbmf8f0t.apps.googleusercontent.com",
     "googleiosClientId": "1069995328646-lb21epofalrk01iicr4u6mdao85eiop0.apps.googleusercontent.com",
     "naverClientId": "Ub80vQrx5w3NLfAy23Ul",
     "naverClientSecret": "aBQALN54Kp",

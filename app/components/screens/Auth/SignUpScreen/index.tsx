@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, TextInput, Button, View } from 'react-native';
-import { AppScreens, AuthStackParamList } from '../../../navigators/AuthFlowNavigatior';
+import { AppScreens, AuthStackParamList } from '../../../navigators/AuthStack';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 type SignupScreenNavigationProps = 

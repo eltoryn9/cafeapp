@@ -1,7 +1,7 @@
 {
-    "api_server_url": "https://18ff-116-39-65-120.ngrok.io/hello/google",
-    "googleWebClientId": "844235026468-5gqhigsogpko3lhk6auts1oohbmf8f0t.apps.googleusercontent.com",
-    "googleiosClientId": "1069995328646-lb21epofalrk01iicr4u6mdao85eiop0.apps.googleusercontent.com",
+    "api_server_url": "https://500c-116-39-65-120.ngrok.io/hello/google",
+    "googleWebClientId": "992591486280-4612levlsq5giekqg8fbfae63rn7r7o1.apps.googleusercontent.com",
+    "googleiosClientId": "992591486280-jpq0cls06beapjijeqdgo8itpdj8lsjt.apps.googleusercontent.com",
     "naverClientId": "Ub80vQrx5w3NLfAy23Ul",
     "naverClientSecret": "aBQALN54Kp",
     "naverUrlScheme": "plnaverlogin"

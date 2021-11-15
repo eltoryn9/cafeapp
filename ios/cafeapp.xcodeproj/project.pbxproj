@@ -12,7 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		551D8DE127340334000EFCA1 /* KakaoOpenSDK-1.23.9 in Resources */ = {isa = PBXBuildFile; fileRef = 551D8DE027340334000EFCA1 /* KakaoOpenSDK-1.23.9 */; };
-		559372732736C185008E9285 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559372722736C185008E9285 /* GoogleService-Info.plist */; };
+		55528757273FE89400C641D0 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 55528756273FE89400C641D0 /* Fonts */; };
+		55E7D602273D02640035260B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55E7D601273D02640035260B /* GoogleService-Info.plist */; };
 		6172F2D35A4C3AA820D92908 /* libPods-cafeapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-cafeapp.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-cafeapp-cafeappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-cafeapp-cafeappTests.a */; };
 /* End PBXBuildFile section */
@@ -40,7 +41,8 @@
 		39D123B19647009368124945 /* Pods-cafeapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cafeapp.release.xcconfig"; path = "Target Support Files/Pods-cafeapp/Pods-cafeapp.release.xcconfig"; sourceTree = "<group>"; };
 		4353542ECAC9852798B8322F /* Pods-cafeapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cafeapp.debug.xcconfig"; path = "Target Support Files/Pods-cafeapp/Pods-cafeapp.debug.xcconfig"; sourceTree = "<group>"; };
 		551D8DE027340334000EFCA1 /* KakaoOpenSDK-1.23.9 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "KakaoOpenSDK-1.23.9"; path = "../../../../../Downloads/KakaoOpenSDK-1.23.9"; sourceTree = "<group>"; };
-		559372722736C185008E9285 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		55528756273FE89400C641D0 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
+		55E7D601273D02640035260B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6423831EA8574132BED9D8CC /* libPods-cafeapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cafeapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D49F8660FD75625CD7CC457 /* Pods-cafeapp-cafeappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cafeapp-cafeappTests.release.xcconfig"; path = "Target Support Files/Pods-cafeapp-cafeappTests/Pods-cafeapp-cafeappTests.release.xcconfig"; sourceTree = "<group>"; };
 		9BD003EBE9EFC0D4FBE380D5 /* Pods-cafeapp-cafeappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cafeapp-cafeappTests.debug.xcconfig"; path = "Target Support Files/Pods-cafeapp-cafeappTests/Pods-cafeapp-cafeappTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		13B07FAE1A68108700A75B9A /* cafeapp */ = {
 			isa = PBXGroup;
 			children = (
-				559372722736C185008E9285 /* GoogleService-Info.plist */,
+				55E7D601273D02640035260B /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -109,6 +111,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		55528755273FE83E00C641D0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +128,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				55528755273FE83E00C641D0 /* Fonts */,
+				55528756273FE89400C641D0 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* cafeapp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* cafeappTests */,
@@ -245,8 +256,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55528757273FE89400C641D0 /* Fonts in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				559372732736C185008E9285 /* GoogleService-Info.plist in Resources */,
+				55E7D602273D02640035260B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

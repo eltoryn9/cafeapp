@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { SafeAreaView, StyleSheet, Text, View, Button } from 'react-native'; 
-import { StackNavigationProp } from '@react-navigation/stack';
+import { MainScreenProps } from './MainScreen';
 
 const ProfileScreen: React.FC<MainScreenProps> = (props) => {
     return(

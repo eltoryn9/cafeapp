@@ -1,8 +1,8 @@
-import React, { createContext, useState, useContext, useEffect} from "react";
+import React, { createContext, useState, useContext, useEffect, useReducer} from "react";
 import AsyncStorage from "@react-native-community/async-storage";
 import { AuthData, authService, SocialType } from '../../apis/services/AuthService';
 import { MMKV } from "react-native-mmkv";
-import { is } from "@babel/types";
+import { Alert } from "react-native";
 
 
 /**
@@ -14,8 +14,7 @@ interface AuthContextData {
     authData?: AuthData;
     isLoading: boolean;
     isSignedIn: boolean;
-    accessTokenExpired: boolean;
-    signIn(social_type: SocialType): Promise<void>;
+    signIn(socialtype: SocialType): Promise<void>;
     signOut(): void;
 }
 
@@ -23,36 +22,47 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FC = ({children}) => {
     const [authData, setAuthData] = useState<AuthData>();
-    const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
-    const [accessTokenExpired, setAccessTokenExpired] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(true);
-
-    useEffect(() => {
+    const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
+   
+    useEffect((): void => {
         loadStorageData();
     }, []);
 
     const loadStorageData = async (): Promise<void> => {
         try {
             const authDataSerialized = await AsyncStorage.getItem('@AuthData');
+            
             if(authDataSerialized){
                 const _authData: AuthData = JSON.parse(authDataSerialized);
-                const _accessToken: String = _authData.tokens.access_token;
+
+                // if(authService.isTokenExpired(_authData)){
+                //     Alert.alert(" EXPIRED !");
+                // }else{
+                //     Alert.alert(" NOT EXPIRED !");
+                // }
                 
                 setAuthData(_authData);
                 setIsSignedIn(true);
             }
         } catch (error) {
-            
+            //throw new Error('User data load failed');
+            //return new Promise.reject();
         } finally{
             setIsLoading(false);
         }
     }
 
     const signIn = async (social_type: SocialType): Promise<void> => {  
-        const _authData = await authService.signIn(social_type);
-        setAuthData(_authData);
-        setIsSignedIn(true);
-        AsyncStorage.setItem('@AuthData', JSON.stringify(_authData));
+        try{
+            const _authData = await authService.signIn(social_type);
+            setAuthData(_authData);
+            setIsSignedIn(true);
+            AsyncStorage.setItem('@AuthData', JSON.stringify(_authData));
+        }catch(error){
+            throw new Error('ddd')
+        };
+        
     };
 
     const signOut = async (): Promise<void> => {
@@ -62,7 +72,7 @@ const AuthProvider: React.FC = ({children}) => {
     };
 
     return (
-        <AuthContext.Provider value={{authData, isLoading, isSignedIn, accessTokenExpired, signIn, signOut}}>
+        <AuthContext.Provider value={{authData, isLoading, isSignedIn, signIn, signOut}}>
             {children}
         </AuthContext.Provider>
     );

@@ -1,43 +1,36 @@
 import React, {useState} from 'react';
 import { SafeAreaView, StyleSheet, Text, View, Button } from 'react-native'; 
 import { StackNavigationProp } from '@react-navigation/stack';
-import { useAuth } from '../../../../context/Auth';
-import Icon from 'react-native-vector-icons';
-
-import {
-    HomeScreens,
-    HomeTabParamList
-} from '../../../navigators/AppStack';
+import { AppScreens, AppTabParamList } from '../../navigators/AppStack';
+import { useAuth } from '../../../context/auth/AuthContext';
 import { ScrollView } from 'react-native-gesture-handler';
 
 type MainScreenNavigationProps = StackNavigationProp<
-    HomeTabParamList,
-    HomeScreens.Main
+    AppTabParamList,
+    AppScreens.Main
 >;
 
-interface MainScreenProps{
+export interface MainScreenProps{
     navigation: MainScreenNavigationProps;
 }
 
 const MainScreen: React.FC<MainScreenProps> = (props) => {
-    const [isLoading, setIsLoading] = useState(false);
     const auth = useAuth();
-                    const signOut = async () => {
-                        setIsLoading(true);
-                        await auth.signOut();
-                    };
-    const {navigation} = props;
-    const initialSymbol: string = "second";
-    const [symbol, setSymbol] = useState<String>(initialSymbol);
+    const signOut = async () => {
+            auth.signOut();
+    };
+
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView>
             <View style={styles.welcomeContainer}>
-                <Icon name='rockt'/>
-                <Text>{auth.authData?.expired_at}</Text>
-                <Text>{auth.authData?.tokens.access_token}</Text>
+                
+                {/* <Text>[ ACCESS TOKEN ] : {auth.authData?.tokens.access_token}</Text>
+                <Text>[ REFRESH TOKEN ] : {auth.authData?.tokens.refresh_token}</Text>
+                <Text>[ EXPIRED AT ] : {auth.authData?.tokens.expired_at}</Text> */}
                 <Button title='sign out' onPress={signOut}/>
-            </View>
+                
+                </View>
             </ScrollView>
         </SafeAreaView>
     );
